@@ -1,5 +1,6 @@
 /*===== GOOGLE FONTS =====*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
 /*===== VARIABLES CSS =====*/
 :root {
   --header-height: 3rem;
@@ -36,6 +37,75 @@
   }
 }
 
+
+/*=====LOADER=====*/
+.contenedor_loader{
+  background-color:#f43e7b;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  transition: all 1.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.loader{
+  position: relative;
+}
+
+.loader:after{
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  animation: girar .5s linear infinite;
+  position: absolute;
+  top: 0;
+  left: -30px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, .5);
+}
+
+.loader:before{
+  content: "";
+  width: 60px;
+  height: 10px;
+  background-color: rgba(0, 0, 0, .4);
+  animation: sombra-animada .5s linear infinite;
+  position: absolute;
+  top: 70px;
+  left: -30px;
+  border-radius: 50%;
+}
+
+@keyframes girar{
+  17%{
+    border-bottom-right-radius: 3px;
+  }
+  25%{
+    transform: translateY(9px) rotate(22.5deg);
+  }
+  50%{
+    transform: scale(1, 0.9) translateY(18px) rotate(45deg);
+    border-bottom-right-radius: 3px;
+  }
+  75%{
+    transform: translateY(9px) rotate(67.5deg);
+  }
+  100%{
+    transform: translateY(0) rotate(90deg);
+  }
+
+}
+
+@keyframes sombra-animada{
+  50%{
+    transform: scale(1.3, 1);
+  }
+}
 /*===== BASE =====*/
 *, ::before, ::after {
   box-sizing: border-box;
